@@ -1,17 +1,17 @@
 package expenses.repository;
 
 import java.util.List;
-
-import org.springframework.roo.addon.layers.repository.jpa.RooJpaRepository;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 import org.springframework.security.access.prepost.PostAuthorize;
 import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
-
 import expenses.domain.Employee;
 import expenses.domain.Expense;
 
-@RooJpaRepository(domainType = Expense.class)
-public interface ExpenseRepository {
+@Repository
+public interface ExpenseRepository extends JpaSpecificationExecutor<Expense>, JpaRepository<Expense, Long> {
 
 	@PostAuthorize("hasPermission(returnObject,'read')")
 	@Transactional(readOnly = true)

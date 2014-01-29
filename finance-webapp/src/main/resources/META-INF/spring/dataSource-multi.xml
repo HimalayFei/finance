@@ -34,16 +34,19 @@
     <jdbc:script location="classpath:/db/schema.sql"/>
     <jdbc:script location="classpath:/db/oauth-schema.sql"/>
   </jdbc:initialize-database>
+  
   <jdbc:initialize-database data-source="springsource.comDataSource">
     <jdbc:script location="classpath:/db/schema.sql"/>
     <jdbc:script location="classpath:/db/data-springsource.sql"/>
     <jdbc:script location="classpath:/db/oauth-schema.sql"/>
     <jdbc:script location="classpath:/db/oauth-data-springsource.sql"/>
   </jdbc:initialize-database>
+  
   <jdbc:initialize-database data-source="qconferences.comDataSource">
     <jdbc:script location="classpath:/db/schema.sql"/>
     <jdbc:script location="classpath:/db/data-qconferences.sql"/>
     <jdbc:script location="classpath:/db/oauth-schema.sql"/>
     <jdbc:script location="classpath:/db/oauth-data-qconferences.sql"/>
   </jdbc:initialize-database>
+
 </beans>
