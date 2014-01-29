@@ -11,7 +11,7 @@
         <aspectj.version>1.6.12</aspectj.version>
         <java.version>1.6</java.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <roo.version>1.2.1.RELEASE</roo.version>
+        <roo.version>1.2.4.RELEASE</roo.version>
         <slf4j.version>1.6.4</slf4j.version>
         <spring.version>3.1.1.RELEASE</spring.version>
         <spring.security.version>3.1.0.RELEASE</spring.security.version>
@@ -53,6 +53,18 @@
     <dependencies>
 
         <!-- General dependencies for standard applications -->
+        
+        <dependency>
+			<groupId>javax.annotation</groupId>
+			<artifactId>jsr250-api</artifactId>
+			<version>1.0</version>
+		</dependency>
+
+		<dependency>
+			<groupId>net.sf.ehcache</groupId>
+			<artifactId>ehcache</artifactId>
+			<version>2.8.0</version>
+		</dependency>
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
@@ -400,6 +412,8 @@
                             <goal>compile</goal>
                             <goal>test-compile</goal>
                         </goals>
+                    <phase>process-sources</phase>
+
                     </execution>
                 </executions>
                 <configuration>
